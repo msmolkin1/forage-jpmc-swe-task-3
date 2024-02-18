@@ -282,7 +282,7 @@ class App(object):
             t2, bids2, asks2 = next(self._current_book_2)
         t = t1 if t1 > t2 else t2
         print ('Query received @ t%s' % t)
-        return [{
+        data_to_return = [{
             'id': x and x.get('id', None),
             'stock': 'ABC',
             'timestamp': str(t),
@@ -308,6 +308,9 @@ class App(object):
                 'size': asks2[0][1]
             }
         }]
+
+        # print(data_to_return)
+        return data_to_return
 
 ################################################################################
 #

@@ -27,6 +27,7 @@ class App extends Component<{}, IState> {
     let x = 0;
     const interval = setInterval(() => {
       DataStreamer.getData((serverResponds: ServerRespond[]) => {
+        // console.log(serverResponds); // Added line to log the data to the console.
         this.setState({
           data: serverResponds,
           showGraph: true,
@@ -38,6 +39,7 @@ class App extends Component<{}, IState> {
       }
     }, 100);
   }
+  
 
   render() {
     return (
